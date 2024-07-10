@@ -1,13 +1,13 @@
 
 import './App.css';
 import Form from './Components/Form';
+import Template from './Components/Template';
 
 function App() {
   return (
-    <div className="App">
-      this is biodata
-      <Form/>
-    </div>
+    
+      <Template/>
+ 
   );
 }
 
