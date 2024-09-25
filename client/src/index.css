@@ -32,7 +32,21 @@ code {
   background-color: #f4f4f4;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items:start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
+
+.sidebar-btn{
+  width: 200px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
 
 .main-content {
   width: 70%;
@@ -41,7 +55,7 @@ code {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .centered-component {
