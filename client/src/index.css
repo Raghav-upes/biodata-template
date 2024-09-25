@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.bold{
+  font-weight: 700 !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -105,4 +109,275 @@ code {
   border-radius: 10px;
   overflow: hidden;
   margin-top: 50px;
+}
+
+
+.centered-component-creame-white {
+  width: 595px;
+  height:780px;
+  /* background-color: #94db2a; */
+  /* background-image: url('./Images/pngwing.com.png'); */
+  background-color: #FFFAF3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  padding: 75px 60px 90px 60px;
+  margin: 0 auto;
+  transform-origin: middle center;
+}
+
+.centered-component-creame-white .biodata {
+  width: 60%;
+}
+
+.centered-component-creame-white .biodata section {
+  margin-bottom: 20px;
+}
+
+.centered-component-creame-white .biodata h2,
+.centered-component-creame-white .biodata h4 {
+  color: #1F1407;
+  font-size: 15px;
+  margin-top: 15px;
+  display: inline;
+}
+
+.centered-component-creame-white .biodata table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.centered-component-creame-white .biodata td {
+  padding: 5px 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  font-size: 13px;
+  max-width: 310px !important;
+  min-width: 150px !important;
+  color: #50483F;
+}
+
+.centered-component-creame-white .biodata .value-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.centered-component-creame-white .img-container {
+  width: 150px;
+  height: 220px;
+  border: 1.5px solid #84c0ed;
+  padding: 10px 10px 0px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.centered-component-creame-white .Small-Box{
+  width: 10px;
+  height: 20px;
+  background-color: #D9AA6F;
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.centered-component-creame-white .Heading{
+  display: flex;
+}
+
+.centered-component-creame-white hr{
+  color: #EAE2D8 !important;
+  width: 470px;
+}
+
+.centered-component-creame-white .frame{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+
+.centered-component-dark-blue {
+  width: 595px;
+  height:780px;
+  /* background-color: #94db2a; */
+  /* background-image: url('./Images/pngwing.com.png'); */
+  background-color:#633030;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  padding: 0px 60px 0px 60px;
+  margin: 0 auto;
+  transform-origin: middle center;
+  overflow: hidden;
+}
+
+.centered-component-dark-blue .biodata {
+  width: 80%;
+  height: 100%;
+  border-left: 4px solid #cba13f;
+  border-right: 4px solid #cba13f;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #633030;
+}
+
+.centered-component-dark-blue .biodata section {
+  margin-bottom: 20px;
+
+}
+
+.centered-component-dark-blue .biodata h2,
+.centered-component-dark-blue .biodata h4 {
+  color: #c8a04d;
+  font-size: 15px;
+  margin-top: 15px;
+  display: inline;
+}
+
+.centered-component-dark-blue .biodata table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.centered-component-dark-blue .biodata td {
+  padding: 5px 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  font-size: 13px;
+  max-width: 310px !important;
+  min-width: 150px !important;
+  color: #e4e4e4;
+}
+
+.centered-component-dark-blue .biodata .value-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #c8a04d;
+}
+
+.centered-component-dark-blue .img-container {
+  width: 120px;
+  height: 120px;
+  /* border: 1.5px solid #84c0ed; */
+  border: none;
+  background-image: url('./Images/flowers-6556966_1280.png');
+  padding: 10px 10px 0px 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+}
+
+.centered-component-dark-blue .Small-Box{
+  width: 10px;
+  height: 20px;
+  background-color: #D9AA6F;
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.centered-component-dark-blue .Heading{
+  display: flex;
+}
+
+.centered-component-dark-blue hr{
+  color: #eae2d8 !important;
+  width: 470px;
+}
+
+.centered-component-dark-blue .frame{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.centered-component-dark-blue .biodata h2{
+  color : #c8a04d;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  display: block;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.centered-component-dark-blue .line-break{
+  filter: grayscale(1) invert(1);
+  height: 15px;
+  width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.centered-component-dark-blue{
+  font-family: "Philosopher", sans-serif !important;
+  font-style: normal !important;
+  letter-spacing: 1px !important;
+}
+.Rangoli{
+  position: absolute;
+  left: -5%;
+  width: 350px;
+  z-index: -1;
+  top: -45px;
+  filter:  invert(56%) sepia(47%) saturate(544%) hue-rotate(4deg) brightness(105%) contrast(91%);
+}
+.Rangoli2{
+  position: absolute;
+  right: -5%;
+  width: 350px;
+  z-index: -1;
+  top: -45px;
+  filter:  invert(56%) sepia(47%) saturate(544%) hue-rotate(4deg) brightness(105%) contrast(91%);
+}
+.Rangoli3{
+  position: absolute;
+  right: -5%;
+  width: 350px;
+  z-index: -1;
+  bottom: -45px;
+  filter:  invert(56%) sepia(47%) saturate(544%) hue-rotate(4deg) brightness(105%) contrast(91%);
+}
+.Rangoli4{
+  position: absolute;
+  left: -5%;
+  width: 350px;
+  z-index: -1;
+  bottom: -45px;
+  filter:  invert(56%) sepia(47%) saturate(544%) hue-rotate(4deg) brightness(105%) contrast(91%);
 }
