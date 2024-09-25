@@ -5,6 +5,21 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Form = () => {
   const [dob, setDob] = useState(null);
   const [timeOfBirth, setTimeOfBirth] = useState(null);
+  const [name, setName] = useState('');
+  const [placeOfBirth, setPlaceOfBirth] = useState('');
+  const [rashi, setRashi] = useState('');
+  const [nakshatra, setNakshatra] = useState('');
+  const [complexion, setComplexion] = useState('');
+  const [height, setHeight] = useState('');
+  const [gotra, setGotra] = useState('');
+  const [bachelors, setBachelors] = useState('');
+  const [work, setWork] = useState('');
+  const [fatherName, setFatherName] = useState('');
+  const [motherName, setMotherName] = useState('');
+  const [contactPerson, setContactPerson] = useState('');
+  const [contactNumber, setContactNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
   const [additionalFields, setAdditionalFields] = useState([]);
 
   const handleAddField = (section) => {
@@ -26,11 +41,36 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      dob,
-      timeOfBirth,
+      personalDetails: {
+        name,
+        dob,
+        timeOfBirth,
+        placeOfBirth,
+        rashi,
+        nakshatra,
+        complexion,
+        height,
+        gotra,
+        bachelors,
+        work,
+      },
+      familyDetails: {
+        fatherName,
+        motherName,
+      },
+      contactDetails: {
+        contactPerson,
+        contactNumber,
+        email,
+        address,
+      },
       additionalFields,
     };
-    console.log(formData);
+
+    // Store the complete form data in localStorage
+    localStorage.setItem('formData', JSON.stringify(formData));
+
+    console.log('Complete form data saved to localStorage:', formData);
   };
 
   return (
@@ -41,8 +81,14 @@ const Form = () => {
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Name <span className="text-red-500">*</span></label>
             <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Name" required />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
+              <input
+                type="text"
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                placeholder="Enter Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
           </div>
           <div className="mb-6">
@@ -55,241 +101,169 @@ const Form = () => {
                 placeholderText="DD/MM/YYYY"
                 dateFormat="dd/MM/yyyy"
               />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
             </div>
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Place Of Birth <span className="text-red-500">*</span></label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Place Of Birth" required />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Place Of Birth"
+              value={placeOfBirth}
+              onChange={(e) => setPlaceOfBirth(e.target.value)}
+              required
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Time Of Birth</label>
-            <div className="flex items-center">
-              <DatePicker
-                selected={timeOfBirth}
-                onChange={(time) => setTimeOfBirth(time)}
-                className="w-full p-3 border border-gray-300 rounded-lg"
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="hh:mm aa"
-                placeholderText="hh:mm aa"
-              />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <DatePicker
+              selected={timeOfBirth}
+              onChange={(time) => setTimeOfBirth(time)}
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={15}
+              timeCaption="Time"
+              dateFormat="hh:mm aa"
+              placeholderText="hh:mm aa"
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Rashi</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Rashi" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Rashi"
+              value={rashi}
+              onChange={(e) => setRashi(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Nakshatra</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Nakshatra" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Nakshatra"
+              value={nakshatra}
+              onChange={(e) => setNakshatra(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Complexion</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Complexion" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Complexion"
+              value={complexion}
+              onChange={(e) => setComplexion(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Height</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Height" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Height"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Gotra</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Gotra" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Gotra"
+              value={gotra}
+              onChange={(e) => setGotra(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Bachelors</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Bachelors" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Bachelors"
+              value={bachelors}
+              onChange={(e) => setBachelors(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Work</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Work" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Work"
+              value={work}
+              onChange={(e) => setWork(e.target.value)}
+            />
           </div>
-          {additionalFields
-            .filter(field => field.section === 'Personal')
-            .map((field, index) => (
-              <div key={index} className="mb-6">
-                <label className="block text-gray-700 mb-2">Field Name</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg mb-2"
-                    placeholder="Enter Field Name"
-                    value={field.fieldName}
-                    onChange={(e) => handleFieldChange(index, 'fieldName', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-                <label className="block text-gray-700 mb-2">Field Value</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    placeholder="Enter Field Value"
-                    value={field.fieldValue}
-                    onChange={(e) => handleFieldChange(index, 'fieldValue', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-            ))}
-          <button type="button" className="text-blue-500 mb-6 flex items-center" onClick={() => handleAddField('Personal')}>
-            <i className="fas fa-plus mr-2"></i> Add More Fields
-          </button>
-
+          
           <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">Family Details</h2>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Father's Name</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Father's Name" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Father's Name"
+              value={fatherName}
+              onChange={(e) => setFatherName(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Mother's Name</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Mother's Name" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Mother's Name"
+              value={motherName}
+              onChange={(e) => setMotherName(e.target.value)}
+            />
           </div>
-          {additionalFields
-            .filter(field => field.section === 'Family')
-            .map((field, index) => (
-              <div key={index} className="mb-6">
-                <label className="block text-gray-700 mb-2">Field Name</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg mb-2"
-                    placeholder="Enter Field Name"
-                    value={field.fieldName}
-                    onChange={(e) => handleFieldChange(index, 'fieldName', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-                <label className="block text-gray-700 mb-2">Field Value</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    placeholder="Enter Field Value"
-                    value={field.fieldValue}
-                    onChange={(e) => handleFieldChange(index, 'fieldValue', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-            ))}
-          <button type="button" className="text-blue-500 mb-6 flex items-center" onClick={() => handleAddField('Family')}>
-            <i className="fas fa-plus mr-2"></i> Add More Fields
-          </button>
 
           <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">Contact Details</h2>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Contact Person</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Contact Person" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Contact Person"
+              value={contactPerson}
+              onChange={(e) => setContactPerson(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2">Contact Number</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Contact Number" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Contact Number"
+              value={contactNumber}
+              onChange={(e) => setContactNumber(e.target.value)}
+            />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 mb-2">Email ID</label>
-            <div className="flex items-center">
-              <input type="email" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Email ID" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <label className="block text-gray-700 mb-2">Email</label>
+            <input
+              type="email"
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 mb-2">Residential Address</label>
-            <div className="flex items-center">
-              <input type="text" className="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Residential Address" />
-              <button type="button" className="text-red-500 ml-2"><i className="fas fa-minus"></i></button>
-            </div>
+            <label className="block text-gray-700 mb-2">Address</label>
+            <textarea
+              className="w-full p-3 border border-gray-300 rounded-lg"
+              placeholder="Enter Address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
           </div>
-          {additionalFields
-            .filter(field => field.section === 'Contact')
-            .map((field, index) => (
-              <div key={index} className="mb-6">
-                <label className="block text-gray-700 mb-2">Field Name</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg mb-2"
-                    placeholder="Enter Field Name"
-                    value={field.fieldName}
-                    onChange={(e) => handleFieldChange(index, 'fieldName', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-                <label className="block text-gray-700 mb-2">Field Value</label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    placeholder="Enter Field Value"
-                    value={field.fieldValue}
-                    onChange={(e) => handleFieldChange(index, 'fieldValue', e.target.value)}
-                  />
-                  <button type="button" className="text-red-500 ml-2" onClick={() => handleDeleteField(index)}>
-                    <i className="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-            ))}
-          <button type="button" className="text-blue-500 mb-6 flex items-center" onClick={() => handleAddField('Contact')}>
-            <i className="fas fa-plus mr-2"></i> Add More Fields
-          </button>
 
-          <button type="submit" className="text-white bg-blue-500 p-3 rounded-lg">Submit</button>
+          <button type="submit" className="bg-blue-500 text-white p-3 rounded-lg w-full">Submit</button>
         </form>
-      </div>
-
-      <div className="w-full lg:w-1/3 bg-white p-4 lg:p-8 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Upload Image</h2>
-        <input type="file" className="mt-1 p-3 border border-gray-300 rounded-lg w-full" />
       </div>
     </div>
   );

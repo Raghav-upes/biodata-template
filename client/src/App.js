@@ -1,12 +1,13 @@
 
 import './App.css';
 import Form from './Components/Form';
-import Template from './Components/Template';
+import Layout from './Layout';
+import Template from './Pages/Template';
 
 function App() {
   return (
     
-      <Template/>
+      <Layout/>
  
   );
 }

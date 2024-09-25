@@ -1,5 +1,5 @@
 import React from 'react'
-import Document from './Document'
+import Document from '../Components/Document'
 
 export default function Template() {
   return (
