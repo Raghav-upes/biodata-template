@@ -6,7 +6,7 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
-import Template from './Pages/Template';
+import Template from './Components/Template';
 
 const Layout = () => {
   return (

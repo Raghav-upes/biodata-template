@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
   const [dob, setDob] = useState(null);
@@ -21,6 +22,7 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [additionalFields, setAdditionalFields] = useState([]);
+  const navigate=useNavigate();
 
   const handleAddField = (section) => {
     setAdditionalFields([...additionalFields, { section, fieldName: '', fieldValue: '' }]);
@@ -69,7 +71,7 @@ const Form = () => {
 
     // Store the complete form data in localStorage
     localStorage.setItem('formData', JSON.stringify(formData));
-
+    navigate("/template");
     console.log('Complete form data saved to localStorage:', formData);
   };
 

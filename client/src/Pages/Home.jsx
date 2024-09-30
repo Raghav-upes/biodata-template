@@ -7,11 +7,11 @@ import TemplateDarkBlue from '../Components/TemplateDarkBlue'
 const Home = () => {
   return (
     <div>
-        <Hero/>
+        {/* <Hero/> */}
         <Form/>
-        <Template/>
+        {/* <Template/>
         <TemplateCreameAndWhite/>
-        <TemplateDarkBlue/>
+        <TemplateDarkBlue/> */}
     </div>
   )
 }
